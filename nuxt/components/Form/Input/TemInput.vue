@@ -38,7 +38,7 @@ export default class TaInput extends Vue {
   @Prop({ type: String, default: "" })
   private placeholder!: string;
 
-  @Prop({ type: String, default: false })
+  @Prop({ type: Boolean, default: false })
   private type!: string;
 
   @Prop({ type: Boolean, default: false })
