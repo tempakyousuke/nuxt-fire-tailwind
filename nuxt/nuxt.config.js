@@ -46,28 +46,31 @@ export default {
         ],
       },
     ],
-    {
-      config: {
-        apiKey: "AIzaSyD4kngrO00qV4Zqzk9sSHbqS3i0fpW_CQg",
-        authDomain: "tempakyousuke-firebase-project.firebaseapp.com",
-        projectId: "tempakyousuke-firebase-project",
-        storageBucket: "tempakyousuke-firebase-project.appspot.com",
-        messagingSenderId: "26606077496",
-        appId: "1:26606077496:web:562ba25d6d1f6861a808cd",
-        measurementId: "G-Z7R4JX7N6F",
-      },
-      services: {
-        auth: {
-          persistence: "local",
-          initialize: {
-            onAuthStateChangedAction: "user/onAuthStateChanged",
-            subscribeManually: false,
-          },
-          ssr: false,
+    [
+      "@nuxtjs/firebase",
+      {
+        config: {
+          apiKey: "AIzaSyD4kngrO00qV4Zqzk9sSHbqS3i0fpW_CQg",
+          authDomain: "tempakyousuke-firebase-project.firebaseapp.com",
+          projectId: "tempakyousuke-firebase-project",
+          storageBucket: "tempakyousuke-firebase-project.appspot.com",
+          messagingSenderId: "26606077496",
+          appId: "1:26606077496:web:562ba25d6d1f6861a808cd",
+          measurementId: "G-Z7R4JX7N6F",
         },
-        firestore: {},
+        services: {
+          auth: {
+            persistence: "local",
+            initialize: {
+              onAuthStateChangedAction: "user/onAuthStateChanged",
+              subscribeManually: false,
+            },
+            ssr: false,
+          },
+          firestore: {},
+        },
       },
-    },
+    ],
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
