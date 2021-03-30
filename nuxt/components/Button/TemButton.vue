@@ -50,11 +50,14 @@ export default class TemButton extends Vue {
   @Prop({ type: String, default: "" })
   private target!: string;
 
-  @Prop({ type: String, default: "blue" })
-  private color!: string;
+  @Prop({ type: String, default: "bg-blue-500" })
+  private bgColor!: string;
 
-  @Prop({ type: Number, default: 500 })
-  private brightness!: number;
+  @Prop({ type: String, default: "bg-opacity-100" })
+  private bgOpacity!: string;
+
+  @Prop({ type: String, default: "hover:bg-opacity-80" })
+  private hoverBgOpacity!: string;
 
   @Prop({ type: Boolean, default: false })
   private disabled!: boolean;
@@ -63,11 +66,12 @@ export default class TemButton extends Vue {
   private block!: boolean;
 
   get buttonClass() {
-    const class1 = `bg-${this.color}-${this.brightness}`;
-    const class2 = `hover:bg-${this.color}-${this.brightness + 200}`;
-    const buttonClass: any = { disabled: this.disabled };
-    buttonClass[class1] = true;
-    buttonClass[class2] = true;
+    const buttonClass: any = {
+      disabled: this.disabled,
+    };
+    buttonClass[this.bgColor] = true;
+    buttonClass[this.bgOpacity] = true;
+    buttonClass[this.hoverBgOpacity] = !this.disabled;
     if (this.block) {
       buttonClass["w-full"] = true;
     }
