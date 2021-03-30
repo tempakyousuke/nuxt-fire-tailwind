@@ -24,8 +24,10 @@
       ]
     },
     "types": [
+      "@types/node",
       "@nuxt/types",
-      "@types/node"
+      "vue-toastification/nuxt",
+      "@nuxtjs/firebase"
     ]
   },
   "exclude": [
