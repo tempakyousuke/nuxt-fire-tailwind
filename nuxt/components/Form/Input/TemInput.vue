@@ -38,7 +38,7 @@ export default class TemInput extends Vue {
   @Prop({ type: String, default: "" })
   private placeholder!: string;
 
-  @Prop({ type: Boolean, default: false })
+  @Prop({ type: String, default: "text" })
   private type!: string;
 
   @Prop({ type: Boolean, default: false })
