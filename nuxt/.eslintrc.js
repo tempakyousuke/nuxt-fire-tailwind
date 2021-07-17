@@ -12,7 +12,7 @@ module.exports = {
   ],
   plugins: ["prettier"],
   rules: {
-    "vue/script-setup-uses-vars": false,
+    "vue/script-setup-uses-vars": "off",
     "prettier/prettier": [
       "error",
       {
