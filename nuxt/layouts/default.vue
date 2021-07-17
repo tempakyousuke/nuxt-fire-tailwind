@@ -10,9 +10,6 @@
     />
     <nuxt />
     <NavigationDrawer v-model="open" />
-    <div class="hidden opacity-0 opacity-50">
-      this element is instead of safelist.In the future, remove this element.
-    </div>
   </div>
 </template>
 
