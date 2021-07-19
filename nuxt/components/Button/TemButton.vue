@@ -3,7 +3,7 @@
     <template v-if="to !== ''">
       <nuxt-link :to="to" :target="target">
         <button
-          class="text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          class="button"
           :class="buttonClass"
           type="button"
           @click="submit"
@@ -15,7 +15,7 @@
     <template v-else-if="href !== ''">
       <a :href="href" :target="target">
         <button
-          class="text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          class="button"
           :class="buttonClass"
           type="button"
           @click="submit"
@@ -25,12 +25,7 @@
       </a>
     </template>
     <template v-else>
-      <button
-        class="text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-        :class="buttonClass"
-        type="button"
-        @click="submit"
-      >
+      <button class="button" :class="buttonClass" type="button" @click="submit">
         <slot></slot>
       </button>
     </template>
@@ -88,6 +83,10 @@ export default class TemButton extends Vue {
 </script>
 
 <style scoped>
+.button {
+  @apply text-whitefont-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline;
+}
+
 .disabled {
   opacity: 0.7;
 }
