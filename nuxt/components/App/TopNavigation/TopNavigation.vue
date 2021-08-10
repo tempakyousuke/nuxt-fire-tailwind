@@ -1,17 +1,23 @@
 <template>
   <div
-    class="w-full text-gray-700 bg-gray-300 dark-mode:text-gray-200 dark-mode:bg-gray-800"
+    class="
+      w-full
+      text-gray-700
+      bg-white
+      dark-mode:text-gray-200 dark-mode:bg-gray-800
+      fixed
+      z-50
+    "
   >
     <div class="flex flex-col max-w-screen-xl px-4 mx-auto">
-      <div class="p-4 flex flex-row items-center justify-between">
-        <nuxt-link
-          class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline"
-          to="/"
-        >
-          {{ title }}
-        </nuxt-link>
+      <div class="py-4 flex flex-row items-center">
         <button
-          class="rounded-lg focus:outline-none focus:shadow-outline"
+          class="
+            rounded-lg
+            focus:outline-none focus:shadow-outline
+            relative
+            xl:-left-10
+          "
           @click="$emit('click')"
         >
           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
@@ -22,6 +28,23 @@
             />
           </svg>
         </button>
+        <nuxt-link
+          class="
+            text-lg
+            font-semibold
+            tracking-widest
+            text-gray-900
+            uppercase
+            rounded-lg
+            dark-mode:text-white
+            focus:outline-none focus:shadow-outline
+            xl:ml-0
+            ml-5
+          "
+          to="/"
+        >
+          {{ title }}
+        </nuxt-link>
       </div>
     </div>
   </div>

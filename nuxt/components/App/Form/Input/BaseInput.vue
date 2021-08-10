@@ -5,15 +5,25 @@
       :class="{ empty: !value && !placeholder }"
     >
       <input
-        class="h-full w-full border-gray-300 px-2 transition-all border-blue rounded"
+        class="
+          h-full
+          w-full
+          border-gray-300
+          px-2
+          transition-all
+          border-blue
+          rounded
+        "
         :class="{
           'border-red-500': haveError,
         }"
         :disabled="disabled"
+        :readonly="readonly"
         :placeholder="placeholder"
         :type="type"
         :value="value"
         @input="$emit('input', $event.target.value)"
+        @click="$emit('click')"
       />
       <label class="absolute left-2 transition-all bg-white px-1">
         {{ label }}
@@ -43,6 +53,9 @@ export default class TemInput extends Vue {
 
   @Prop({ type: Boolean, default: false })
   private disabled!: boolean;
+
+  @Prop({ type: Boolean, default: false })
+  private readonly!: boolean;
 
   @Prop({ type: Boolean, default: false })
   private isInvalid!: boolean;

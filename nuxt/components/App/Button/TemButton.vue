@@ -84,7 +84,7 @@ export default class TemButton extends Vue {
 
 <style scoped>
 .button {
-  @apply text-whitefont-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline;
+  @apply py-1 px-3 rounded focus:outline-none focus:shadow-outline;
 }
 
 .disabled {
