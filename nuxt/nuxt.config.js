@@ -27,6 +27,7 @@ export default {
     "@/plugins/breadcrumb",
     "@/plugins/components.js",
     "@/plugins/validation",
+    "@/plugins/loading",
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

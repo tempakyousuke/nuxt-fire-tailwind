@@ -19,6 +19,7 @@
     "nuxt": "2.15.7",
     "nuxt-fontawesome": "^0.4.0",
     "vee-validate": "3.4.10",
+    "vue-loading-overlay": "^4.0.3",
     "vue-toastification": "^1.7.11"
   },
   "devDependencies": {
