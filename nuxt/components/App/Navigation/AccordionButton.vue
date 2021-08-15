@@ -2,7 +2,7 @@
   <div class="accordion">
     <div
       class="parent hover:bg-gray-400 rounded-md"
-      :class="{ open: open }"
+      :class="{ open: open, 'root-match': checkPartMatch(item.to) }"
       @click="toggle"
     >
       <div class="icon-area">
@@ -18,7 +18,11 @@
         v-for="(value, key) in item.children"
         :key="key"
         class="hover:bg-gray-400 rounded-md"
-        :class="{ 'close-link': !open, 'open-link': open }"
+        :class="{
+          'close-link': !open,
+          'open-link': open,
+          'root-match': checkMatch(value.to),
+        }"
       >
         <nuxt-link :to="value.to">
           <div class="link">{{ value.label }}</div>
@@ -52,6 +56,15 @@ export default class AccordionButton extends Vue {
     }
   }
 
+  checkPartMatch(to: string) {
+    const reg = new RegExp("^" + to);
+    return reg.test(this.$route.path);
+  }
+
+  checkMatch(to: string) {
+    return this.$route.path === to;
+  }
+
   toggle() {
     this.open = !this.open;
     if (this.open) {
@@ -64,6 +77,11 @@ export default class AccordionButton extends Vue {
 ul {
   list-style-type: none;
 }
+
+.accordion {
+  width: 14rem;
+}
+
 .accordion .parent {
   display: flex;
   cursor: pointer;
@@ -76,7 +94,7 @@ ul {
 }
 .accordion .parent >>> svg {
   margin-left: 1rem;
-  font-size: 18px;
+  font-size: 1rem;
   color: #595959;
   transition: all 0.4s ease;
 }
@@ -105,5 +123,9 @@ ul {
 .icon-area {
   width: 3rem;
   margin-right: 1rem;
+}
+
+.root-match {
+  @apply bg-gray-300;
 }
 </style>

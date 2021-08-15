@@ -54,7 +54,7 @@ ul {
   position: absolute;
   top: 1.3rem;
   right: 1.3rem;
-  font-size: 18px;
+  font-size: 1rem;
   color: #595959;
   transition: all 0.4s ease;
 }

@@ -10,26 +10,6 @@
       />
       <NavLink v-else :key="item.label" :item="item" />
     </template>
-    <div
-      v-if="isLoggedIn"
-      class="
-        py-3
-        flex
-        link
-        mt-3
-        hover:text-gray-900
-        focus:text-gray-900
-        hover:bg-gray-400
-        focus:bg-gray-200 focus:outline-none focus:shadow-outline
-        rounded-md
-      "
-      @click="logout"
-    >
-      <div class="icon-area">
-        <fontawesome icon="sign-out-alt" />
-      </div>
-      ログアウト
-    </div>
   </div>
 </template>
 
@@ -51,18 +31,8 @@ export default class AccordionMenu extends Vue {
     return this.$store.state.user.user;
   }
 
-  get isLoggedIn() {
-    return this.$store.state.user.authUser;
-  }
-
   get payoutsEnabled() {
     return this.user.payoutsEnabled;
-  }
-
-  private logout() {
-    this.$fire.auth.signOut();
-    this.$router.push("/login/");
-    this.$emit("close");
   }
 
   openNav() {

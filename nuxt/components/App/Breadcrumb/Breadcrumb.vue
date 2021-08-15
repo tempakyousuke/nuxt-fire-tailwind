@@ -4,7 +4,11 @@
       <template v-if="idx !== 0">
         <fontawesome class="mx-3" icon="chevron-right" />
       </template>
-      <nuxt-link v-if="val.to" class="hover:text-blue-500" :to="val.to">
+      <nuxt-link
+        v-if="val.to"
+        class="text-blue-500 hover:text-opacity-50 hover:underline"
+        :to="val.to"
+      >
         {{ val.label }}
       </nuxt-link>
       <span v-else class="text-gray-700">{{ val.label }}</span>

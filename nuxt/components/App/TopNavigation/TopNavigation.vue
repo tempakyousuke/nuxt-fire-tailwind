@@ -9,8 +9,8 @@
       z-50
     "
   >
-    <div class="flex flex-col max-w-screen-xl px-4 mx-auto">
-      <div class="py-4 flex flex-row items-center">
+    <div class="flex flex-col max-w-screen-xl px-4 mx-auto h-16">
+      <div class="my-auto flex flex-row items-center">
         <button
           class="
             rounded-lg
@@ -30,6 +30,7 @@
         </button>
         <nuxt-link
           class="
+            flex-grow
             text-lg
             font-semibold
             tracking-widest
@@ -45,6 +46,24 @@
         >
           {{ title }}
         </nuxt-link>
+        <div
+          v-if="isLoggedIn"
+          class="
+            p-2
+            flex flex-shrink
+            link
+            hover:text-gray-900
+            focus:text-gray-900
+            hover:bg-gray-400
+            focus:bg-gray-200 focus:outline-none focus:shadow-outline
+            rounded-md
+          "
+          @click="logout"
+        >
+          <div class="icon-area">
+            <fontawesome icon="sign-out-alt" />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -56,5 +75,15 @@ import { Vue, Component, Prop } from "nuxt-property-decorator";
 export default class TopNav extends Vue {
   @Prop({ type: String, default: "" })
   private title!: string;
+
+  get isLoggedIn() {
+    return this.$store.state.user.authUser;
+  }
+
+  private logout() {
+    this.$fire.auth.signOut();
+    this.$router.push("/login/");
+    this.$emit("close");
+  }
 }
 </script>

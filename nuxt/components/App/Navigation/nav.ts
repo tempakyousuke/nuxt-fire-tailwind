@@ -9,6 +9,7 @@ export const nav: Item[] = [
   {
     label: "手配先管理",
     icon: "handshake",
+    to: "/partners",
     children: [
       {
         label: "手配先一覧",

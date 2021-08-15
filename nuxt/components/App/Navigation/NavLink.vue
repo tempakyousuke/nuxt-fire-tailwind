@@ -2,7 +2,7 @@
   <nuxt-link :to="item.to">
     <div
       class="link hover:bg-gray-400 rounded-md"
-      :class="{ 'text-gray-900': rootMatch, 'bg-gray-200': rootMatch }"
+      :class="{ 'text-gray-900': rootMatch, 'bg-gray-300': rootMatch }"
       @click="$emit('close')"
     >
       <div v-if="item.icon" class="icon-area">

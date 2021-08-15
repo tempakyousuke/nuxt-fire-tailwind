@@ -78,13 +78,13 @@ export default class TemInput extends Vue {
 label {
   top: 0%;
   transform: translateY(-50%);
-  font-size: 11px;
+  font-size: 0.7rem;
   color: rgba(37, 99, 235, 1);
 }
 .empty input:not(:focus) + label {
   top: 50%;
   transform: translateY(-50%);
-  font-size: 14px;
+  font-size: 1rem;
 }
 input:not(:focus) + label {
   color: rgba(150, 150, 150, 1);
